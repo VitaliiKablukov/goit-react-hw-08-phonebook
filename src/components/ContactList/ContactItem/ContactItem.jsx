@@ -1,18 +1,29 @@
-import { Button } from './ContactItem.styled';
-
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'Redux/Contacts/operation';
-
+import { Box, Container, Flex, VStack, Button } from '@chakra-ui/react';
 export const ContactItem = ({ contactItem }) => {
   const dispatch = useDispatch();
   const { id, name, number } = contactItem;
 
   return (
-    <li key={id}>
-      {name}: {number}
-      <Button type="button" onClick={() => dispatch(deleteContact(id))}>
-        delete:{name}
-      </Button>
-    </li>
+    <Container w="480px" mb="30px" padding="4px">
+      <Box boxShadow="base" py="6" px="1" rounded="md" bg="white">
+        <li key={id}>
+          <Flex justify="space-around" align="center">
+            <VStack align="stretch">
+              <Box alignContent="start">Name: {name}</Box>
+              <Box textAlign="start">Number: {number}</Box>
+            </VStack>
+            <Button
+              type="button"
+              colorScheme="red"
+              onClick={() => dispatch(deleteContact(id))}
+            >
+              Delete contact
+            </Button>
+          </Flex>
+        </li>
+      </Box>
+    </Container>
   );
 };

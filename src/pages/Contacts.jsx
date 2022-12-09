@@ -6,7 +6,7 @@ import { selectIsLoading } from 'Redux/Contacts/selectors';
 import { ContactList } from 'components/ContactList/ContactList';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Filter } from 'components/Filter/Filter';
-
+import { Box, Container, Flex, Spinner } from '@chakra-ui/react';
 const Contacts = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
@@ -16,16 +16,44 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <Helmet>
-        <title>Your tasks</title>
-      </Helmet>
-      <div>{isLoading && 'Request in progress...'}</div>
-      <ContactForm />
+    <Container
+      py={{
+        base: '6',
+        md: '12',
+      }}
+      px={{
+        base: '0',
+        sm: '8',
+      }}
+    >
+      <div>
+        {isLoading && (
+          <Spinner
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="blue.500"
+            size="xl"
+            position="fixed"
+            left="50%"
+            top="50%"
+          />
+        )}
+      </div>
 
-      <Filter />
-      <ContactList />
-    </>
+      <Helmet>
+        <title>Your Contacts</title>
+      </Helmet>
+      <Flex justify="space-around">
+        <Box>
+          <ContactForm />
+        </Box>
+        <Box>
+          <Filter />
+          <ContactList />
+        </Box>
+      </Flex>
+    </Container>
   );
 };
 export default Contacts;

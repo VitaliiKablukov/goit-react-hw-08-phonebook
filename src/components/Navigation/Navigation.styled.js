@@ -2,12 +2,14 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 export const NavigationLink = styled(NavLink)`
   text-decoration: none;
-  color: #000000;
-  padding: 4px;
-  background-color: #f1ecfb;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ffffff;
+  padding: 8px 34px;
+  background-color: #12bbe6;
   border: 1px solid;
   border-color: black;
-  border-radius: 4px;
+  border-radius: 10px;
 
   &:not(:last-child) {
     margin-right: 10px;
@@ -15,7 +17,7 @@ export const NavigationLink = styled(NavLink)`
   &:hover,
   &:focus {
     color: black;
-    background-color: #4ea5f7;
+    background-color: #0085d4;
   }
   &.active {
     background-color: green;
