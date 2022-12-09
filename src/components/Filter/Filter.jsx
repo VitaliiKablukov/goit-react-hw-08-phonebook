@@ -22,7 +22,7 @@ export const Filter = () => {
   return (
     contacts.length > 0 && (
       <Container w="480px" mb="30px">
-        <Box boxShadow="base" p="6" rounded="md" bg="white">
+        <Box boxShadow="base" p="6" rounded="md">
           <Heading size="24px">Find contacts by name</Heading>
           <FormControl>
             <Input type="text" name="filter" onChange={filterText} />

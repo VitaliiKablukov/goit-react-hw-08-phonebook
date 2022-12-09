@@ -1,4 +1,3 @@
-import { useToast } from '@chakra-ui/react';
 const styles = {
   container: {
     minHeight: 'calc(100vh - 50px)',
@@ -15,17 +14,6 @@ const styles = {
 
 //
 
-const Success = () => {
-  const toast = useToast();
-  toast({
-    title: 'Account created.',
-    description: "We've created your account for you.",
-    status: 'success',
-    duration: 2000,
-    isClosable: true,
-  });
-};
-
 const Home = () => {
   return (
     <div style={styles.container}>
@@ -35,7 +23,6 @@ const Home = () => {
           💁‍♀️
         </span>
       </h1>
-      <Success />
     </div>
   );
 };

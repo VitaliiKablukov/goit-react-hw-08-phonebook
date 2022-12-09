@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'Redux/Contacts/selectors';
 import { addContacts } from 'Redux/Contacts/operation';
+
 import { Logo } from './Logo';
 import {
   Button,
@@ -15,6 +16,7 @@ import {
   Container,
   Heading,
 } from '@chakra-ui/react';
+import { ToastFailedContact } from '../Toast/Toast';
 
 export const ContactForm = () => {
   const contacts = useSelector(selectContacts);
@@ -31,7 +33,7 @@ export const ContactForm = () => {
 
     if (contacts.some(el => el.name === name.toLowerCase())) {
       form.reset();
-      return alert(`${name} is already contacts`);
+      ToastFailedContact(name);
     } else {
       dispatch(addContacts({ name, number }));
       form.reset();

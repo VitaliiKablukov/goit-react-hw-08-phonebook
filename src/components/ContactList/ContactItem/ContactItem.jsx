@@ -7,7 +7,7 @@ export const ContactItem = ({ contactItem }) => {
 
   return (
     <Container w="480px" mb="30px" padding="4px">
-      <Box boxShadow="base" py="6" px="1" rounded="md" bg="white">
+      <Box boxShadow="base" py="6" px="1" rounded="md">
         <li key={id}>
           <Flex justify="space-around" align="center">
             <VStack align="stretch">
