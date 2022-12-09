@@ -21,8 +21,18 @@ export const Filter = () => {
 
   return (
     contacts.length > 0 && (
-      <Container w="480px" mb="30px">
-        <Box boxShadow="base" p="6" rounded="md">
+      <Container
+        w={{ sm: '320px', md: '380px', lg: '480' }}
+        display="block"
+        mb="30px"
+      >
+        <Box
+          boxShadow="base"
+          p="6"
+          rounded="md"
+          w={{ sm: '280px', md: '316px', lg: '480' }}
+          display="block"
+        >
           <Heading size="24px">Find contacts by name</Heading>
           <FormControl>
             <Input type="text" name="filter" onChange={filterText} />

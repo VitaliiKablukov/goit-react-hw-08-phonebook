@@ -23,8 +23,15 @@ export const ContactList = () => {
         })
       ) : (
         <li>
-          <Container w="480px" mb="30px">
-            <Box boxShadow="base" p="6" rounded="md" bg="white">
+          <Container mb="30px" w={{ sm: '320px', md: '480px' }}>
+            <Box
+              boxShadow="base"
+              p="6"
+              rounded="md"
+              bg="white"
+              w={{ sm: '320px', md: '380px', lg: '480' }}
+              display="block"
+            >
               <Text>no contacts were found for this request {filterText}</Text>
             </Box>
           </Container>
@@ -32,8 +39,18 @@ export const ContactList = () => {
       )}
     </ContactsList>
   ) : (
-    <Container w="480px" mb="30px">
-      <Box boxShadow="base" p="6" rounded="md" bg="white">
+    <Container
+      mb="30px"
+      w={{ sm: '320px', md: '380px', lg: '480' }}
+      display="block"
+    >
+      <Box
+        boxShadow="base"
+        p="6"
+        rounded="md"
+        bg="white"
+        w={{ sm: '320px', md: '380px', lg: '480' }}
+      >
         <Text>Sorry, but you don't have contacts</Text>
       </Box>
     </Container>

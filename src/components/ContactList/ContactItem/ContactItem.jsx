@@ -6,8 +6,13 @@ export const ContactItem = ({ contactItem }) => {
   const { id, name, number } = contactItem;
 
   return (
-    <Container w="480px" mb="30px" padding="4px">
-      <Box boxShadow="base" py="6" px="1" rounded="md">
+    <Container
+      w={{ sm: '320px', md: '380px', lg: '480' }}
+      display="block"
+      mb="30px"
+      padding="4px"
+    >
+      <Box boxShadow="base" px="1" rounded="md" paddingY={{ sm: '0', xl: '6' }}>
         <li key={id}>
           <Flex justify="space-around" align="center">
             <VStack align="stretch">

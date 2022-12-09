@@ -8,7 +8,11 @@ export const UserMenu = () => {
   const { user } = useAuth();
 
   return (
-    <Flex align="center">
+    <Flex
+      align="center"
+      max-width={{ sm: '320px', md: '768px', lg: '960px', xl: '1200px' }}
+      marginLeft={{ md: '60px', lg: '0' }}
+    >
       <Box as="p" mr="10px" fontSize="20px" fontWeight="500">
         Welcome, {user.name}
       </Box>

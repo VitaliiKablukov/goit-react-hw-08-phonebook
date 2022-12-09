@@ -44,7 +44,7 @@ const Contacts = () => {
       <Helmet>
         <title>Your Contacts</title>
       </Helmet>
-      <Flex justify="space-around">
+      <Flex justify="space-around" flexDirection={{ sm: 'column', md: 'row' }}>
         <Box>
           <ContactForm />
         </Box>
