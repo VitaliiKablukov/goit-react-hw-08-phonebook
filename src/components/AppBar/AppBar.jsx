@@ -35,9 +35,11 @@ export const AppBar = () => {
         </Flex>
       </Box>
       <Box
+        display="flex"
+        justifyContent="center"
         opacity={{ sm: '1', md: '0' }}
-        visibility={{ sm: 'visible', md: 'hidden' }}
-        pointerEvents={{ sm: 'visible', md: 'none' }}
+        visibility={{ md: 'hidden' }}
+        pointerEvents={{ md: 'none' }}
       >
         <MobileModalAppBar />
       </Box>

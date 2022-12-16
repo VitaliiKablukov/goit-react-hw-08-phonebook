@@ -42,8 +42,9 @@ export const MobileModalAppBar = () => {
               align="center"
               flexDirection="column"
               px="1"
-              width={{ sm: '280px' }}
-              paddingX={{ md: '10' }}
+              minW="280px"
+              paddingX="10"
+              paddingY="10"
               m="0 auto"
             >
               <Navigation />
